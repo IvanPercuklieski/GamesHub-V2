@@ -1,0 +1,23 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if(isLoading){
+    <p>Loading...</p>
+  }@else {
+    <div class="games-container">
+    <div class="games-left">
+      <ion-title>Newest Games</ion-title>
+      <app-games-list [games]="games()"></app-games-list>
+    </div>
+
+    <div class="games-right">
+      <ion-title>Top 10 Games</ion-title>
+      <app-games-top-ten [games]="topTenGames()"></app-games-top-ten>
+    </div>
+  </div>
+  }
+</ion-content>
+
+

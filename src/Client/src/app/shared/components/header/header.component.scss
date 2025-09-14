@@ -1,0 +1,19 @@
+ion-toolbar{
+    max-width: 1500px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+@media (max-width: 540px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}

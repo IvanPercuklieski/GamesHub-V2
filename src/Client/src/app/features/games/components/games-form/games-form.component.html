@@ -1,0 +1,58 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit()" class="game-form">
+
+    <ion-input 
+      formControlName="name" 
+      label="Game name:" 
+      class="form-input">
+    </ion-input>
+
+    <div class="field-label">Description:</div>
+    <div class="quill-container">
+      <quill-editor
+        [modules]="editorModule"
+        formControlName="description"
+        theme="snow">
+      </quill-editor>
+    </div>
+
+    <ion-select 
+      formControlName="genres" 
+      [multiple]="true" 
+      label="Genre:" 
+      interface="modal"
+      class="form-input">
+      @for(genre of genres(); track genre.id){
+        <ion-select-option [value]="genre.id">{{genre.name}}</ion-select-option>
+      }
+    </ion-select>
+
+    <ion-input formControlName="height" label="Height:" class="form-input"></ion-input>
+    <ion-input formControlName="width" label="Width:" class="form-input"></ion-input>
+
+    <div class="file-input-wrapper form-input">
+      <label class="custom-file-button">
+        Select Cover Photo
+        <input type="file" (change)="onImageChange($event)" hidden>
+      </label>
+      <span class="file-name">{{coverFileName || 'No file chosen'}}</span>
+    </div>
+
+
+    <div class="file-input-wrapper form-input">
+      <label class="custom-file-button">
+        Select Game Zip
+        <input type="file" (change)="onGameFilesChange($event)" hidden>
+      </label>
+      <span class="file-name">{{zipFileName || 'No file chosen'}}</span>
+    </div>
+
+
+
+    <ion-button expand="full" type="submit" class="submit-btn">Upload Game</ion-button>
+  </form>
+</ion-content>

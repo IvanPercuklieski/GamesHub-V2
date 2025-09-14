@@ -1,0 +1,17 @@
+<ion-card>
+  <img style="cursor: pointer;" (click)="router.navigate(['games', game().id, 'play'])"  [src]="'https://localhost:7220/' + game().coverImageUrl"/>
+  <ion-card-header style="cursor: pointer;" (click)="router.navigate(['games', game().id, 'play'])" >
+    <ion-card-title class="card-title">{{game().name}}</ion-card-title>
+    <ion-card-subtitle class="user-name">{{game().publisher.username}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="card-description" [innerHTML]="game().description">
+      
+    </div>
+
+   @if(showDeleteButton()){
+    <br><ion-button (click)="deleteGame(game().id)" color="danger">Delete</ion-button>
+   }
+  </ion-card-content>
+</ion-card>

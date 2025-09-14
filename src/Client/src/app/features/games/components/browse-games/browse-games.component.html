@@ -1,0 +1,47 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <div>
+      <ion-item>
+        <ion-searchbar (ionClear)="searchGames($event)" (ionInput)="searchGames($event)" [debounce]="1000" placeholder="Search Games" show-clear-button="always"></ion-searchbar>
+      </ion-item>
+
+      <ion-accordion-group value="first">
+        <ion-accordion value="first">
+          <ion-item slot="header">Genres</ion-item>
+          <div slot="content" style="background: var(--ion-background-color-step-50); border-top: 1px solid var(--ion-background-color-step-200);">
+            @for(genre of genres(); track genre.id){
+              <ion-checkbox 
+                labelPlacement="end"
+                [checked]="selectedGenres().includes(genre.id)"
+                (ionChange)="onGenreToggle(genre.id, $event.detail.checked)"
+              >{{genre.name}}</ion-checkbox>
+            }
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </div>
+
+    <div>
+
+    </div>
+
+    <div>
+      <app-games-list [games]="filteredGames()"></app-games-list>
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+
+    @if(filteredGames().length===0){
+      <div>
+        <p>No games found</p>
+      </div>
+    }
+  </div>
+
+  
+</ion-content>

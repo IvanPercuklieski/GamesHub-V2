@@ -1,0 +1,62 @@
+ion-card {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+
+ion-card-header {
+  flex-shrink: 0;
+}
+
+
+ion-card-content {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-name{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+  word-break: break-word;
+
+  p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}

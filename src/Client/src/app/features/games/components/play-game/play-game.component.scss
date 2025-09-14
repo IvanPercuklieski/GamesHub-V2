@@ -1,0 +1,59 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gameTitle {
+  font-size: 2em;          
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.game iframe {
+    margin-inline: auto;
+  display: block;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.description {
+    text-align: start;
+    max-width: 800px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+
+.data{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.high-scores-table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.high-scores-table th,
+.high-scores-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.high-scores-table th {
+  background-color: black;
+}
+
+.data > div.active {
+  opacity: 1;
+  font-weight: bold; 
+  border-bottom: 2px solid gray
+}

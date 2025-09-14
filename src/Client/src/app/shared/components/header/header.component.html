@@ -1,0 +1,52 @@
+
+<ion-toolbar>
+  @if(showButtons()){
+
+    <ion-buttons style="padding-right: 40px" class="desktop-menu" slot="end">
+      <ion-button style="font-size: 18px;" (click)="goToBrowse()">Browse Games</ion-button>
+      <ion-button style="font-size: 18px;" (click)="goToUpload()">Upload Games</ion-button>
+      <ion-button style="font-size: 18px;" (click)="openUserMenu($event)">{{user().username}}</ion-button>
+    </ion-buttons>
+
+    <ion-buttons class="mobile-menu" slot="end">
+      <ion-button (click)="isNavModalOpen.set(true)"><ion-icon size="large" name="menu"></ion-icon></ion-button>
+    </ion-buttons>
+  }
+
+  <ion-title style="font-size: 24px; font-weight: bold; cursor: pointer;" slot="start" (click)="navigateToHome()">GAMESHUB</ion-title>
+</ion-toolbar>
+
+<ion-modal #navModal [isOpen]="isNavModalOpen()" (didDismiss)="closeModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="closeModal()"><ion-icon size="large"  name="arrow"></ion-icon></ion-button>
+        </ion-buttons>
+        <ion-title>GAMESHUB</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item (click)="goToHome()">Home</ion-item>
+        <ion-item>Browse games</ion-item>
+        <ion-item (click)="goToUpload()">Upload game</ion-item>
+        <ion-item (click)="goToProfile()">Profile</ion-item>
+        <ion-item (click)="logout()">Sign out</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+  
+</ion-modal>
+
+<ion-popover [event]="popoverEvent" [isOpen]="isUserMenuOpen()" (didDismiss)="isUserMenuOpen.set(false)" triggerAction="click"  dismissOnSelect="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item style="cursor: pointer;" (click)="goToProfile()">Profile</ion-item>
+        <ion-item style="cursor: pointer;" (click)="logout()">Sign out</ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>

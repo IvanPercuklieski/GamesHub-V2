@@ -1,0 +1,29 @@
+
+.games-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+/* Left and right sections */
+.games-left {
+  width: 70%;
+}
+
+.games-right {
+  width: 25%;
+}
+
+
+@media (max-width: 1000px) {
+  .games-container {
+    flex-direction: column;
+  }
+
+  .games-left,
+  .games-right {
+    width: 100%;
+  }
+}

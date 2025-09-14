@@ -1,0 +1,23 @@
+<ion-list style="margin-top: 10px;">
+  @for(game of games(); track game.id){
+    <div style="cursor: pointer;" (click)="router.navigate(['games', game.id, 'play'])">
+      <ion-item style="padding: 10px;">
+        <div style="font-size: 35px; margin-right: 10px;">
+          @if($index === 9){
+            {{$index + 1}}
+          }@else{
+            0{{$index + 1}}
+          }
+        </div>
+
+        <div style="margin-right: 10px;">
+          <img [src]="'https://localhost:7220/' + game.coverImageUrl" height="70px" width="60px"/>
+        </div>
+
+        <div class="game-name">
+          {{game.name}}
+        </div>
+      </ion-item>
+    </div>
+  }
+</ion-list>

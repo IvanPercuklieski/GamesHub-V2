@@ -1,0 +1,5 @@
+<div class="gamesContainer">
+  @for (game of games(); track game.id) {
+    <app-game-card [game]="game"></app-game-card>
+  }
+</div>

@@ -1,0 +1,6 @@
+.gamesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, max-content));
+  justify-content: start;
+}
+

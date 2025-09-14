@@ -1,0 +1,28 @@
+
+div{
+    margin-inline: auto;
+    max-width: 340px;
+}
+
+form {
+  width: 100%;
+  max-width: 340px;
+  padding: 2rem;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+ion-input {
+  margin-bottom: 1rem;
+  --background: #2a2a2a;
+  --color: #fff;
+  --placeholder-color: #aaa;
+  --padding-start: 12px;
+  border-radius: 8px;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}

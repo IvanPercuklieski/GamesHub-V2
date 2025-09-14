@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">GAMESHUB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-input formControlName="username" placeholder="Username" label="Username"></ion-input>
+
+      <ion-input formControlName="password" placeholder="Password" label="Password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+
+      <ion-button type="submit">Login</ion-button>
+    </form>
+
+    <ion-button (click)="router.navigate(['auth', 'register'])">Go To Register</ion-button>
+  </div>
+</ion-content>
